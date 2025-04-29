@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CD Seraphine Weetebula</title>
+  <link rel="stylesheet" href="home.css">
+  <!-- load an icon font for the little icons in the footer -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-yH4u8+...YOUR_HASH_HERE..." crossorigin="anonymous" referrerpolicy="no-referrer" 
+  />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="../aset/image/logo.jpg" alt="Logo" class="logo">
+      <span class="site-name">CD Seraphine Weetebula</span>
+    </div>
+    <nav class="navbar-links">
+      <a href="#">Home</a>
+      <a href="#">Profil</a>
+      <a href="#">Produk</a>
+      <a href="#">Galeri</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" id="heroText">
+      <h1>Balai Tenun</h1>
+      <h2>CD Seraphine Weetebula</h2>
+      <a href="#intro" class="btn">More Info</a>
+    </div>
+  </section>
+
+  <!-- Deskripsi Singkat -->
+  <section class="intro" id="intro">
+    <div class="deskripsi">
+      <img src="../aset/image/aa.jpg" alt="Tas" class="intro-image">
+    </div>
+    <div class="intro-container">
+      <p>
+        Balai Tenun Seraphine hadir di tengah desa bukan semata untuk berkarya, 
+        tetapi sebagai wujud nyata kepedulian kami terhadap masyarakat kecil. 
+        Kami berkomitmen mendukung peningkatan kesejahteraan ekonomi, serta 
+        memberdayakan perempuan agar lebih berdaya dan bermartabat di tanah 
+        mereka sendiri.
+      </p>
+    </div>
+  </section>
+  
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  
+    .intro {
+      display: flex;
+      justify-content: flex-end;
+      padding: 40px 20px; /* atas-bawah 40px, kanan-kiri 20px */
+      background-color: #f9f9f9; /* opsional, agar latar lembut */
+      width: 100%;
+    }
+  
+    .intro-container {
+      max-width: 600px;
+    }
+  
+    .intro p {
+      text-align: justify;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
+      color: #333;
+    }
+  </style>
+  
+
+  <!-- Produk Unggulan -->
+  <section class="produk-unggulan">
+    <h3>Produk Unggulan Kami</h3>
+    <div class="produk-list">
+      <div class="produk-item"><img src="../aset/image/tas.jpg" alt="Tas"></div>
+      <div class="produk-item"><img src="../aset/image/baju.jpg" alt="Baju Tenun"></div>
+      <div class="produk-item"><img src="../aset/image/tenun.jpg" alt="Tenun"></div>
+    </div>
+  </section>
+
+  <!-- Info & Payment Footer -->
+  <footer class="footer">
+    <div class="footer-col kontak">
+      <h4>Need Help?</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Jl. Kedungmundu No.18, Kedungmundu, Semarang, Jawa Tengah 50273</p>
+      <p><i class="fas fa-phone"></i> +62 895-4217-70009</p>
+    </div>
+    <div class="footer-col payment">
+      <h4>Payment</h4>
+      <p><strong>BRI</strong><br>602....</p>
+      <p><strong>DANA</strong><br>0895-4217-70009</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

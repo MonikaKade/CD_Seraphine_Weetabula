@@ -1,0 +1,157 @@
+/* reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c8102e;
+  padding: 0.75rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  height: 40px;
+  width:  40px;
+  margin-right: 10px;;
+}
+.site-name, .navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 18px;
+  align-items: center;
+}
+.navbar-links a {
+  margin-left: 1.5rem;
+  transition: opacity 0.2s;
+}
+.navbar-links a:hover {
+  opacity: 0.8;
+}
+
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('../aset/image/bg.jpg') center/cover no-repeat; /* swap in your actual hero image */
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  transition: transform 0.2s ease-out;
+}
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+.hero-content h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #c8102e;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #f0f0f0;
+}
+/* Intro */
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+  background: #fafafa;
+  font-size: 1rem;
+  text-align: justify;
+  flex-wrap: wrap; /* Supaya responsif di layar kecil */
+}
+
+.intro-image {
+  width: 500px;      /* Ukuran maksimum gambar */
+  height: auto;      /* Biar proporsional */
+  object-fit: cover; /* Memastikan isi gambar pas */
+  border-radius: 8px;
+}
+
+.intro-container {
+  max-width: 600px;
+}
+
+
+/* Produk */
+.produk-unggulan {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.produk-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.produk-item img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer (kontak + payment) */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background: #c8102e;
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+.footer-col {
+  flex: 1 1 300px;
+  margin: 0.5rem;
+}
+.footer-col h4 {
+  margin-bottom: 1rem;
+}
+.footer-col p {
+  margin-bottom: 0.75rem;
+}
+.footer-col i {
+  margin-right: 0.5rem;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .produk-list { gap: 0.5rem; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content h2 { font-size: 1.5rem; }
+}
