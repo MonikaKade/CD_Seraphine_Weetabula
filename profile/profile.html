@@ -1,0 +1,248 @@
+<head>
+  <meta charset="UTF-8">
+  <title>CD Seraphine Weetebula</title>
+  <link rel="stylesheet" href="home.css">
+  <!-- load an icon font for the little icons in the footer -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-yH4u8+...YOUR_HASH_HERE..." crossorigin="anonymous" referrerpolicy="no-referrer" 
+  />
+</head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'cinzel', sans-serif; /* Ganti font di sini */
+    }
+
+
+    /* Style untuk seluruh halaman */
+    body {
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    /* HEADER: bagian atas dengan logo dan navigasi */
+    header {
+      background-color: #d71920; /* merah khas */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    /* Logo di dalam header */
+    header img {
+      height: 30px;
+    }
+
+    /* Link navigasi */
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* HERO: banner besar dengan judul */
+    .hero {
+      position: relative;
+      background-image: url('https://via.placeholder.com/800x400'); /* Ganti dengan gambar hero asli */
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 5px #000; /* Biar judul terlihat jelas di atas gambar */
+    }
+
+    /* SECTION umum: kontainer isi tengah */
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Judul section */
+    .section h2 {
+      color: #d71920;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px #ccc;
+    }
+
+    /* Flex wrapper untuk grid 2 kolom (tujuan dan gambar) */
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Card berwarna merah untuk kotak tujuan */
+    .card {
+      background-color: #d62828;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 300px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    /* Gambar penenun */
+    .image-box img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Visi & Misi layout dua kolom */
+    .visi-misi {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .visi-misi div {
+      flex: 1 1 45%;
+    }
+
+    /* FOOTER: bagian bawah halaman */
+    footer {
+      background-color: #a11c1c;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Flexbox untuk pembagian footer */
+    footer .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    footer .footer-flex div {
+      margin: 10px 0;
+    }
+
+    /* List misi */
+    li {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div>
+      <!-- Logo dan nama usaha -->
+      <img src="https://via.placeholder.com/30" alt="Logo" />
+      <span>CD Seraphine Weetebula</span>
+    </div>
+
+    <!-- Navigasi menu -->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Profile</a>
+      <a href="#">Produk</a>
+      <a href="#">Galeri</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <h1>Profile & Sejarah</h1>
+  </section>
+
+  <!-- ===== PROFIL SINGKAT ===== -->
+  <section class="section">
+    <h2>Balai Tenun CD Seraphine Weetebula</h2>
+    <p>
+      <!-- Deskripsi singkat -->
+      Balai Tenun CD Seraphine Weetebula intak dusun untuk persevasi tradisional ikat dan mengadipkan pemasaran ekonomis junjun dan masyarakat kewanitan artesan lokal warisan.
+    </p>
+  </section>
+
+  <!-- ===== TUJUAN & GAMBAR ===== -->
+  <section class="section flex">
+    <!-- Tujuan Balai Tenun -->
+    <div class="card">
+      <h3>Tujuan dari Balai Tenun</h3>
+      <p>
+        IsT, mroduking i tengki ikat berkualitas waib dan menjaga kultural historis pengehalan tradisonal berwakili.
+      </p>
+    </div>
+
+    <!-- Gambar penenun -->
+    <div class="image-box">
+      <img src="https://via.placeholder.com/400x300" alt="Penenun" />
+    </div>
+  </section>
+
+  <!-- ===== VISI & MISI ===== -->
+  <section class="section">
+    <h2>Visi dan Misi dari Balai Tenun CD Seraphine Weetebula</h2>
+
+    <div class="visi-misi">
+      <!-- Misi -->
+      <div>
+        <h3>Misi</h3>
+        <ol>
+          <li>Menyediakan pelatihan dan pendampingan bagi penenun lokal, terutama perempuan muda.</li>
+          <li>Mengembangkan kualitas dan desain kain tenun agar dapat bersaing di pasar nasional dan internasional.</li>
+          <li>Membangun jaringan pemasaran yang luas untuk hasil tenun lokal.</li>
+          <li>Menjalin kerja sama dengan lembaga sosial, gereja, dan LSM untuk mendukung pemberdayaan masyarakat.</li>
+          <li>Mengintegrasikan nilai-nilai spiritual dan sosial dalam setiap kegiatan produksi dan pelatihan.</li>
+        </ol>
+      </div>
+
+      <!-- Visi -->
+      <div>
+        <h3>Visi</h3>
+        <p>
+          “Mewujudkan Balai Tenun Seraphine Weetebula sebagai pusat pelestarian budaya tenun khas Sumba yang berdaya saing, berkelanjutan, dan memberdayakan pengrajin lokal untuk kemajuan sosial dan ekonomi masyarakat.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-flex">
+      <!-- Kontak -->
+      <div>
+        <strong>Need Help?</strong><br/>
+        Jl. Kedungmundu No.18, Kedungmundu, Kec. Tembalang, Kota Semarang, Jawa Tengah 50273<br/>
+        📞 +62 895-4217-70009
+      </div>
+
+      <!-- Informasi pembayaran -->
+      <div>
+        <strong>Payment</strong><br/>
+        BRI 602.....<br/>
+        DANA 0895-4217-70009
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
