@@ -1,6 +1,7 @@
-/* Reset & Base */
+/*  Import Font Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* Reset CSS (menghilangkan margin & padding default browser) */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,23 +10,23 @@
   scroll-behavior: smooth;
 }
 
+/*  Body (isi utama) */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   color: #333;
 }
 
-/* Navbar */
+/*  Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #d71920;
   padding: 0.75rem 2rem;
-  position: sticky;
+  position: sticky; /* tetap di atas saat di-scroll */
   top: 0;
   z-index: 100;
-  font-family: 'Poppins', sans-serif;
 }
 
 .navbar-left {
@@ -41,10 +42,8 @@ body {
 
 .site-name {
   color: #fff;
-  text-decoration: none;
   font-weight: bold;
   font-size: 18px;
-  line-height: 1;
 }
 
 .navbar-links a {
@@ -60,30 +59,26 @@ body {
   opacity: 0.8;
 }
 
-/* Hero */
+/*  Hero Section */
 .hero {
   position: relative;
   height: 80vh;
-  background: url('../aset/image/bg.jpg') center/cover no-repeat;
-  font-family: 'Poppins', sans-serif;
+  background: url('../aset/image/produk/10.jpeg') center/cover no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.3); /* efek gelap */
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
   text-align: center;
   color: #fff;
   top: 50%;
   transform: translateY(-50%);
   padding: 0 1rem;
-  transition: transform 0.2s ease-out;
-  font-family: 'Poppins', sans-serif;
 }
 
 .hero-content h1 {
@@ -96,33 +91,29 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Tombol */
 .btn {
-  display: inline-block;
   background: #fff;
   color: #d71920;
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s;
-  font-family: 'Poppins', sans-serif;
 }
 
 .btn:hover {
   background: #f0f0f0;
 }
 
-/* Intro */
+/* Intro Section */
 .intro {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding: 3rem 1.5rem;
   background: #fafafa;
-  font-size: 1rem;
   text-align: justify;
   flex-wrap: wrap;
-  font-family: 'Poppins', sans-serif;
 }
 
 .intro-image {
@@ -134,14 +125,12 @@ body {
 
 .intro-container {
   max-width: 600px;
-  font-family: 'Poppins', sans-serif;
 }
 
-/* Produk */
+/*  Produk Unggulan */
 .produk-unggulan {
   padding: 3rem 1.5rem;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
 }
 
 .produk-list {
@@ -153,7 +142,6 @@ body {
 }
 
 .produk-item img {
-  display: block;
   width: 120px;
   height: 120px;
   object-fit: cover;
@@ -161,14 +149,13 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Footer (kontak + payment) */
+/* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
   padding: 20px;
   background-color: #d71920;
   color: white;
-  font-family: 'Poppins', sans-serif;
 }
 
 .footer-left,
@@ -176,28 +163,7 @@ body {
   max-width: 45%;
 }
 
-.footer h3 {
-  margin-top: 0;
-}
-
-/* List styling */
-li {
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(100px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive tweaks */
+/*  Responsive (untuk layar kecil) */
 @media (max-width: 600px) {
   .produk-list { gap: 0.5rem; }
   .hero-content h1 { font-size: 2rem; }
