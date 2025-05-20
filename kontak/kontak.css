@@ -1,49 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+/* FONT & RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.5;
+  background-color: #b41417;
+  color: white;
+  line-height: 1.6;
 }
 
-/* Contact Section */
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #d71920;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.site-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ffdddd;
+}
+
+/* ===== CONTACT SECTION ===== */
 .contact-section {
   padding: 60px 20px;
-  background-color: #d71920; 
 }
 
 .contact-container {
-  max-width: 1100px;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  color: white;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
 }
 
-.contact-info, .contact-form-area {
+/* Left Info Box */
+.contact-info {
   flex: 1;
   min-width: 300px;
 }
 
-.contact-info h2,
-.contact-form-area h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+.contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 .contact-info p {
-  margin-bottom: 1.5rem;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .contact-list {
@@ -51,18 +83,28 @@ body {
 }
 
 .contact-list li {
+  margin-bottom: 15px;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
 }
 
 .contact-list i {
-  margin-right: 10px;
-  font-size: 1.2rem;
+  margin-right: 12px;
+  font-size: 20px;
 }
 
-/* Contact Form */
+/* Right Form Box */
+.contact-form-area {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form-area h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -70,47 +112,46 @@ body {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
   border: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  font-size: 16px;
   color: #333;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid #d71920;
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .contact-form button {
-  background-color: #000;
-  color: white;
-  padding: 12px;
+  background-color: white;
+  color: #b41417;
+  font-weight: 600;
+  padding: 12px 20px;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #333;
+  background-color: #f0f0f0;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    margin-top: 12px;
+  }
+
   .contact-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-info, .contact-form-area {
-    width: 100%;
-  }
-
-  .contact-form input, .contact-form textarea {
-    width: 100%;
   }
 }
