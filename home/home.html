@@ -1,47 +1,49 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html> <!-- Menentukan dokumen HTML5 -->
+<html lang="id"> <!-- Bahasa dokumen: Indonesia -->
 <head>
-  <meta charset="UTF-8">
-  <title>CD Seraphine Weetebula</title>
+  <meta charset="UTF-8"> <!-- Set encoding karakter -->
+  <title>CD Seraphine Weetebula</title> <!-- Judul di tab browser -->
+  
+  <!-- Menghubungkan file CSS eksternal -->
   <link rel="stylesheet" href="home.css">
-  <!-- load an icon font for the little icons in the footer -->
+
+  <!-- Font Awesome untuk ikon (misalnya ikon WhatsApp, lokasi, dll) -->
   <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    integrity="sha512-yH4u8+...YOUR_HASH_HERE..." crossorigin="anonymous" referrerpolicy="no-referrer" 
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    crossorigin="anonymous" referrerpolicy="no-referrer" 
+  />
 
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Navbar -->
+  <!--  Navbar (navigasi utama) -->
   <header class="navbar">
     <div class="navbar-left">
-      <img src="../aset/image/logo.jpg" alt="Logo" class="logo">
-      <span class="site-name">CD Seraphine Weetebula</span>
+      <img src="../aset/image/logo.jpg" alt="Logo" class="logo"> <!-- Logo -->
+      <span class="site-name">CD Seraphine Weetebula</span> <!-- Nama situs -->
     </div>
-    <nav class="navbar-links">
+    <nav class="navbar-links"> <!-- Tautan navigasi -->
       <a href="home.html">Home</a>
       <a href="../profile/profile.html">Profil</a>
       <a href="../produk/produk.html">Produk</a>
       <a href="../kontak/kontak.html">Contact</a>
-
     </nav>
   </header>
-  
 
-  <!-- Hero Section -->
+  <!--  Hero Section (gambar besar pembuka halaman) -->
   <section class="hero">
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay"></div> <!-- Efek overlay gelap -->
     <div class="hero-content" id="heroText">
       <h1>Balai Tenun</h1>
       <h2>CD Seraphine Weetebula</h2>
-
     </div>
   </section>
 
-  <!-- Deskripsi Singkat -->
+  <!--  Deskripsi singkat (tentang tujuan organisasi) -->
   <section class="intro" id="intro">
     <div class="deskripsi">
       <img src="../aset/image/produk/2.jpeg" alt="Tas" class="intro-image">
@@ -49,60 +51,26 @@
     <div class="intro-container">
       <p>
         Balai Tenun Seraphine hadir di tengah desa bukan semata untuk berkarya, 
-        tetapi sebagai wujud nyata kepedulian kami terhadap masyarakat kecil. 
-        Kami berkomitmen mendukung peningkatan kesejahteraan ekonomi, serta 
-        memberdayakan perempuan agar lebih berdaya dan bermartabat di tanah 
-        mereka sendiri.
+        tetapi sebagai wujud nyata kepedulian kami terhadap masyarakat kecil...
       </p>
     </div>
   </section>
-  
-  
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-  
-    .intro {
-      display: flex;
-      justify-content: flex-end;
-      padding: 40px 20px; /* atas-bawah 40px, kanan-kiri 20px */
-      background-color: #f9f9f9; /* opsional, agar latar lembut */
-      width: 100%;
-    }
-  
-    .intro-container {
-      max-width: 600px;
-    }
-  
-    .intro p {
-      text-align: justify;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 0;
-      color: #333;
-    }
-  </style>
-  
 
-  <!-- Produk Unggulan -->
+  <!--  Produk Unggulan -->
   <section class="produk-unggulan">
     <h3>Produk Unggulan Kami</h3>
     <div class="produk-list">
-      <div class="produk-item"><img src="../aset/image/tas.jpg" alt="Tas"></div>
-      <div class="produk-item"><img src="../aset/image/baju.jpg" alt="Baju Tenun"></div>
-      <div class="produk-item"><img src="../aset/image/tenun.jpg" alt="Tenun"></div>
+      <div class="produk-item"><img src="../aset/image/produk/8.jpeg" alt="Tas"></div>
+      <div class="produk-item"><img src="../aset/image/Hasil Tenun/tenun4.jpeg" alt="Tenun"></div>
     </div>
   </section>
 
-  <!-- Info & Payment Footer -->
+  <!--  Footer (Kontak & Info Pembayaran) -->
   <div class="footer">
     <div class="footer-left">
       <h3>Need Help?</h3>
-      <p>📍 Jln. Bulgur, No. 12, Kel.Langgalero, Kec.Kota Tambolaka, Kab.Sumba Barat Daya,<br>
-         Provinsi Nusa Tenggara Timur</p>
-      <p>📞 +62 895-4217-70009</p>
+      <p>📍 Alamat lengkap</p>
+      <p>📞 Nomor telepon</p>
     </div>
     <div class="footer-right">
       <h3>Payment</h3>
@@ -110,8 +78,8 @@
       <p><strong>DANA</strong><br>0895-4217-70009</p>
     </div>
   </div>
-  
 
+  <!--  JavaScript eksternal (opsional jika ada animasi tambahan) -->
   <script src="script.js"></script>
 </body>
 </html>
