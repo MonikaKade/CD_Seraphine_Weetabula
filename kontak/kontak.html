@@ -12,12 +12,12 @@
 </head>
 <body>
 
-    <header class="navbar">
+  <header class="navbar">
     <div class="navbar-left">
-      <img src="../aset/image/logo.jpg" alt="Logo" class="logo"> <!-- Logo -->
-      <span class="site-name">CD Seraphine Weetebula</span> <!-- Nama situs -->
+      <img src="../aset/image/logo.jpg" alt="Logo" class="logo">
+      <span class="site-name">CD Seraphine Weetebula</span>
     </div>
-    <nav class="navbar-links"> <!-- Tautan navigasi -->
+    <nav class="navbar-links">
       <a href="../home/home.html">Home</a>
       <a href="../produk/produk.html">Produk</a>
       <a href="../kontak/kontak.html">Kontak</a>
@@ -30,55 +30,71 @@
         <h2>HUBUNGI KAMI</h2>
         <p>Feel free to call, email, or reach us via social media. We are happy to help!</p>
         <ul class="contact-list">
-         <!-- Footer -->
-    <div class="footer">
-        <div class="footer-left">
-            <h3>Kontak</h3>
-            <p><i class="fas fa-map-marker-alt"></i>Jln. Bulgur, No. 12, Kel. Langgalero, Kec. Kota Tambolaka, Kab. Sumba Barat Daya, Prov. NTT</p>
-            <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
-            <p><i class="fas fa-envelope"></i> info@seraphineweetebula.com</p>
+          <div class="footer">
+            <div class="footer-left">
+              <h3>Kontak</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Jln. Bulgur, No. 12, Kel. Langgalero, Kec. Kota Tambolaka, Kab. Sumba Barat Daya, Prov. NTT</p>
+              <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
+              <p><i class="fas fa-envelope"></i> info@seraphineweetebula.com</p>
+            </div>
+            <div class="footer-right">
+              <h3>Payment</h3>
+              <p><strong><i class="fas fa-university"></i> BRI</strong><br>601234789012345</p>
+              <p><strong><i class="fas fa-wallet"></i> DANA</strong><br>0895-4217-70009</p>
+            </div>
+          </div>
 
-        </div>
-        <div class="footer-right">
-            <h3>Payment</h3>
-            <p><strong><i class="fas fa-university"></i> BRI</strong><br>602....</p>
-            <p><strong><i class="fas fa-wallet"></i> DANA</strong><br>0895-4217-70009</p>
-        </div>
-    </div>
-    <div class="social-media">
-  <a href="#" class="social-link">
-    <i class="fab fa-facebook-f"></i>
-    <span>seraphineweetebula</span>
-  </a>
-  <a href="#" class="social-link">
-    <i class="fab fa-instagram"></i>
-    <span>@seraphineweetebula</span> </a>
-  <a href="https://wa.me/62895421770009" class="social-link" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    <span>0895421770009</span>
-  </a>
-</div>
+          <div class="social-media">
+            <a href="#" class="social-link">
+              <i class="fab fa-facebook-f"></i> <span>seraphineweetebula</span>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i> <span>@seraphineweetebula</span>
+            </a>
+            <a href="https://wa.me/62895421770009" class="social-link" target="_blank">
+              <i class="fab fa-whatsapp"></i> <span>0895421770009</span>
+            </a>
+          </div>
 
-    
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+          <div class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+          </div>
         </ul>
       </div>
 
       <div class="contact-form-area">
         <h2>KIRIMI KAMI PESAN</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="text" placeholder="Telephone Number" required />
-          <textarea rows="5" placeholder="Your Message" required></textarea>
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Email Address" required />
+          <input type="text" id="phone" placeholder="Telephone Number" required />
+          <textarea rows="5" id="message" placeholder="Your Message" required></textarea>
           <button type="submit">SEND MESSAGE</button>
         </form>
       </div>
     </div>
   </section>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Mencegah reload halaman
+
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var message = document.getElementById('message').value.trim();
+
+      var text = `Halo, saya ingin menghubungi Anda.%0A` +
+                 `Nama: ${name}%0A` +
+                 `Email: ${email}%0A` +
+                 `No HP: ${phone}%0A` +
+                 `Pesan: ${message}`;
+
+      var waNumber = '62895421770009'; // Ganti dengan nomor tujuan
+
+      window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
+    });
+  </script>
 
 </body>
 </html>
