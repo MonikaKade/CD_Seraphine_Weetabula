@@ -75,8 +75,8 @@ document.querySelectorAll('.produk-button').forEach(button => {
         e.stopPropagation();
         const productName = this.closest('.produk-overlay').querySelector('h3').textContent;
         const phoneNumber = "6289542177009";
-        const message = `Halo, saya tertarik dengan produk ${productName}, bisa minta info lebih lanjut?`;
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        const message = Halo, saya tertarik dengan produk ${productName}, bisa minta info lebih lanjut?;
+        const url = https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)};
         window.open(url, "_blank");
     });
 });
