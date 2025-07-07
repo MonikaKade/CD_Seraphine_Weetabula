@@ -3,16 +3,879 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CD Seraphine Weetebula</title>
+    <title>CD Seraphine Weetebula - Tenun Sumba</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513; /* SaddleBrown */
+            --secondary-color: #D2B48C; /* Tan */
+            --accent-color: #A0522D; /* Sienna */
+            --light-color: #F5F5DC; /* Beige */
+            --dark-color: #5D2906; /* Dark Brown */
+            --text-color: #333;
+            --white: #fff;
+            --gold: #FFD700;
+            --transition: all 0.3s ease;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 1rem 5%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .navbar.scrolled .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .site-name {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .navbar-links a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .navbar-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .navbar-links a:hover::after,
+        .navbar-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        } 
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../aset/image/produk/10.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(139, 69, 19, 0.3), rgba(210, 180, 140, 0.2));
+            z-index: 1;
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 0 2rem;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-button:hover {
+            background-color: transparent;
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,5 C75,10 25,10 0,5 Z" fill="%23F5F5DC"/></svg>') bottom center repeat-x;
+            background-size: 100% 100%;
+            z-index: 3;
+        }
+
+        /* Section Header */
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .section-header.center {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header span {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .divider.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .section-quote::before,
+        .section-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .section-quote::before {
+            top: -1.5rem;
+            left: 0;
+        }
+
+        .section-quote::after {
+            bottom: -3rem;
+            right: 0;
+        }
+
+        /* Intro Section */
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 6rem 10%;
+            gap: 4rem;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .deskripsi {
+            flex: 1;
+            min-width: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .intro-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .image-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .deskripsi:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .deskripsi:hover .intro-image {
+            transform: scale(1.1);
+        }
+
+        .deskripsi:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .intro-container {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .intro-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .achievements {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--light-color);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            min-width: 200px;
+        }
+
+        .achievement-item i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .achievement-item .count {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1;
+        }
+
+        /* Card Section */
+        .section {
+            padding: 6rem 10%;
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .card-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .card p, .card ul {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Produk Unggulan */
+        .produk-unggulan {
+            padding: 6rem 10%;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .produk-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .produk-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .produk-image {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+        }
+
+        .produk-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .produk-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(139, 69, 19, 0.8), transparent);
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .produk-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .produk-button {
+            background-color: var(--gold);
+            color: var(--dark-color);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .produk-button:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .produk-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .produk-item:hover .produk-image img {
+            transform: scale(1.1);
+        }
+
+        .produk-item:hover .produk-overlay {
+            transform: translateY(0);
+        }
+
+        .lihat-semua {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 1rem;
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 3rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .lihat-semua:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .lihat-semua:active {
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding-top: 5rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,10 L100,10 L100,0 C75,5 25,5 0,0 Z" fill="%23F5F5DC"/></svg>') top center repeat-x;
+            background-size: 100% 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 10% 3rem;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .logo {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--gold);
+        }
+
+        .footer-logo .site-name {
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .footer-left p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-media a {
+            color: var(--white);
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-media a:hover {
+            background-color: var(--gold);
+            color: var(--dark-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-center {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-center h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-center p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-center i {
+            color: var(--gold);
+            margin-top: 3px;
+        }
+
+        .footer-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-right h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .payment-method:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .payment-method i {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--gold);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--gold);
+            color: var(--dark-color);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .navbar-links.active {
+                left: 0;
+            }
+            
+            .navbar-links a {
+                font-size: 1.2rem;
+                margin-left: 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                margin-top: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-button {
+                padding: 0.7rem 1.5rem;
+            }
+            
+            .intro, .section, .produk-unggulan {
+                padding: 4rem 5%;
+            }
+            
+            .card, .produk-item {
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -22,127 +885,192 @@
             <span class="site-name">CD Seraphine Weetebula</span>
         </div>
         <nav class="navbar-links">
-            <a href="home.html">Home</a>
+            <a href="home.html" class="active">Home</a>
             <a href="../produk/produk.html">Produk</a>
             <a href="../kontak/kontak.html">Kontak</a>
         </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
     
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content" id="heroText">
-            <h1>Balai Tenun</h1>
-            <h2>CD Seraphine Weetebula</h2>
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Warisan Tenun Sumba</h1>
+            <h2 class="animate__animated animate__fadeInUp">CD Seraphine Weetebula</h2>
+            <p class="hero-subtitle animate__animated animate__fadeIn">Melestarikan Budaya, Memberdayakan Perempuan</p>
+            <a href="#produk" class="hero-button animate__animated animate__fadeInUp">Lihat Koleksi</a>
         </div>
-       
     </section>
     
     <!-- Intro Section -->
     <section class="intro" id="intro">
         <div class="deskripsi">
-            <img src="../aset/image/produk/2.jpeg" alt="Tas" class="intro-image">
+            <div class="image-container">
+                <img src="../aset/image/produk/2.jpeg" alt="Tenun Sumba" class="intro-image">
+                <div class="image-overlay">
+                    <h3>Tenun Asli Sumba</h3>
+                    <p>Dibuat dengan cinta oleh tangan-tangan terampil</p>
+                </div>
+            </div>
         </div>
         <div class="intro-container">
+            <div class="section-header">
+                <span>Tentang Kami</span>
+                <h2>Balai Tenun Seraphine</h2>
+                <div class="divider"></div>
+            </div>
             <p>Balai Tenun Seraphine hadir di tengah desa bukan semata untuk berkarya, tetapi sebagai wujud nyata kepedulian kami terhadap masyarakat kecil. Kami berkomitmen untuk melestarikan warisan budaya tenun Sumba sambil memberdayakan perempuan lokal melalui keterampilan yang bernilai ekonomi tinggi.</p>
+            <div class="achievements">
+                <div class="achievement-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <span class="count">50+</span>
+                        <span>Penenun Terlatih</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Profil Lengkap -->
     <section class="section">
-        <div class="intro">
-          
-            <div class="intro-text">
-                <h2>Balai Tenun CD Seraphine Weetebula</h2>
-                <p>"Kami adalah jantung pelestarian budaya Sumba — tempat di mana benang demi benang tenun ikat tradisional dirangkai bukan hanya untuk menghasilkan karya, tetapi juga untuk merajut harapan. Di Balai Tenun CD Seraphine Weetebula, tradisi dan kreativitas berpadu menciptakan masa depan yang lebih cerah bagi masyarakat lokal."</p>
-            </div>
+        <div class="section-header center">
+            <span>Visi & Misi</span>
+            <h2>Balai Tenun CD Seraphine Weetebula</h2>
+            <div class="divider center"></div>
+            <p class="section-quote">"Kami adalah jantung pelestarian budaya Sumba — tempat di mana benang demi benang tenun ikat tradisional dirangkai bukan hanya untuk menghasilkan karya, tetapi juga untuk merajut harapan."</p>
         </div>
         
         <div class="card-section">
             <div class="card">
-                <h3>Tujuan</h3>
-                <p>
-                    Menjadi pelopor dalam memproduksi kain tenun berkualitas tinggi sekaligus menjaga
-                    kelestarian budaya lokal lewat pelatihan dan pengembangan keterampilan masyarakat.
-                </p>
                 <div class="card-icon">
                     <i class="fas fa-bullseye"></i>
                 </div>
+                <h3>Tujuan</h3>
+                <p>Menjadi pelopor dalam memproduksi kain tenun berkualitas tinggi sekaligus menjaga kelestarian budaya lokal lewat pelatihan dan pengembangan keterampilan masyarakat.</p>
             </div>
             <div class="card">
-                <h3>Misi</h3>
-                <ul>
-                    <li>Memberikan pelatihan profesional bagi penenun muda perempuan.</li>
-                    <li>Meningkatkan kualitas serta inovasi dalam desain tenun.</li>
-                    <li>Memperluas pasar lokal dan internasional.</li>
-                    <li>Membangun kolaborasi dengan LSM, gereja, dan komunitas lokal.</li>
-                </ul>
                 <div class="card-icon">
                     <i class="fas fa-tasks"></i>
                 </div>
+                <h3>Misi</h3>
+                <ul>
+                    <li>Memberikan pelatihan profesional bagi penenun muda perempuan</li>
+                    <li>Meningkatkan kualitas serta inovasi dalam desain tenun</li>
+                    <li>Memperluas pasar lokal dan internasional</li>
+                    <li>Membangun kolaborasi dengan LSM, gereja, dan komunitas lokal</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>Visi</h3>
-                <p>
-                    Membangun pusat tenun yang tidak hanya berdaya saing dan berkelanjutan, tetapi juga mendorong
-                    pemberdayaan sosial dan ekonomi masyarakat Sumba.
-                </p>
                 <div class="card-icon">
                     <i class="fas fa-eye"></i>
                 </div>
+                <h3>Visi</h3>
+                <p>Membangun pusat tenun yang tidak hanya berdaya saing dan berkelanjutan, tetapi juga mendorong pemberdayaan sosial dan ekonomi masyarakat Sumba.</p>
             </div>
         </div>
     </section>
     
     <!-- Produk Unggulan -->
-    <section class="produk-unggulan">
-        <h3>Produk Unggulan Kami</h3>
+    <section class="produk-unggulan" id="produk">
+        <div class="section-header center">
+            <span>Koleksi Kami</span>
+            <h2>Produk Unggulan</h2>
+            <div class="divider center"></div>
+        </div>
         <div class="produk-list">
             <div class="produk-item">
-                <img src="../aset/image/produk/8.jpeg" alt="Tas" class="intro-image">
+                <div class="produk-image">
+                    <img src="../aset/image/produk/8.jpeg" alt="Tas Tenun">
+                    <div class="produk-overlay">
+                        <h3>Tas Tenun</h3>
+                        <button class="produk-button">Lihat Detail</button>
+                    </div>
+                </div>
             </div>
             <div class="produk-item">
-                <img src="../aset/image/Hasil Tenun/tenun1.jpeg" alt="Produk Lain">
+                <div class="produk-image">
+                    <img src="../aset/image/Hasil Tenun/tenun1.jpeg" alt="Kain Tenun">
+                    <div class="produk-overlay">
+                        <h3>Kain Tenun</h3>
+                        <button class="produk-button">Lihat Detail</button>
+                    </div>
+                </div>
             </div>
-        </div><br>
+            <div class="produk-item">
+                <div class="produk-image">
+                    <img src="../aset/image/produk/10.jpeg" alt="Selendang Tenun">
+                    <div class="produk-overlay">
+                        <h3>Selendang Tenun</h3>
+                        <button class="produk-button">Lihat Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <button class="lihat-semua">Lihat Semua Produk</button>
     </section>
   
     <!-- Footer -->
-    <div class="footer">
-        <div class="footer-left">
-            <h3>Kontak</h3>
-            <p><i class="fas fa-map-marker-alt"></i>Jln. Bulgur, No. 12, Kel. Langgalero, Kec. Kota Tambolaka, Kab. Sumba Barat Daya, Prov. NTT</p>
-            <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
-            <p><i class="fas fa-envelope"></i> info@seraphineweetebula.com</p>
-            
-            <div class="social-media">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="../aset/image/logo.jpg" alt="Logo" class="logo">
+                    <span class="site-name">CD Seraphine Weetebula</span>
+                </div>
+                <p>Melestarikan warisan tenun Sumba sambil memberdayakan masyarakat lokal melalui karya berkualitas tinggi.</p>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-center">
+                <h3>Kontak Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jln. Bulgur, No. 12, Kel. Langgalero, Kec. Kota Tambolaka, Kab. Sumba Barat Daya, Prov. NTT</p>
+                <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
+                <p><i class="fas fa-envelope"></i> info@seraphineweetebula.com</p>
+            </div>
+            <div class="footer-right">
+                <h3>Metode Pembayaran</h3>
+                <div class="payment-methods">
+                    <div class="payment-method">
+                        <i class="fas fa-university"></i>
+                        <span>BRI - 602....</span>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-wallet"></i>
+                        <span>DANA - 0895-4217-70009</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-right">
-            <h3>Payment</h3>
-            <p><strong><i class="fas fa-university"></i> BRI</strong><br>602....</p>
-            <p><strong><i class="fas fa-wallet"></i> DANA</strong><br>0895-4217-70009</p>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CD Seraphine Weetebula. All Rights Reserved.</p>
         </div>
-    </div>
+    </footer>
     
     <!-- Back to Top Button -->
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
     
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    
-    <!-- JS -->
     <script>
-        // Navbar scroll effect
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navbarLinks = document.querySelector('.navbar-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            mobileMenu.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Combined scroll effects
         window.addEventListener('scroll', function() {
+            // Navbar scroll effect
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -157,16 +1085,40 @@
             } else {
                 backToTop.classList.remove('active');
             }
+            
+            // Animation on scroll
+            const elements = document.querySelectorAll('.card, .produk-item, .intro-text');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate_animated', 'animate_fadeInUp');
+                }
+            });
         });
-        
+
         // Smooth scrolling for all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navbarLinks.classList.contains('active')) {
+                        navbarLinks.classList.remove('active');
+                        mobileMenu.querySelector('i').classList.remove('fa-times');
+                    }
+                }
             });
         });
         
@@ -179,41 +1131,3 @@
         });
         
         // Product hover effect
-        const productItems = document.querySelectorAll('.produk-item');
-        productItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Here you can add functionality to show product details
-                alert('Produk akan ditampilkan lebih detail di halaman produk');
-            });
-        });
-        
-        // Read more button
-        document.querySelector('.read-more').addEventListener('click', function() {
-            alert('Konten lebih lanjut akan ditampilkan');
-            // You can replace this with actual content expansion
-        });
-        
-        // See all products button
-        document.querySelector('.lihat-semua').addEventListener('click', function() {
-            window.location.href = '../produk/produk.html';
-        });
-        
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.card, .produk-item, .intro-text');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('animate_animated', 'animate_fadeInUp');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    </script>
-</body>
-</html>
