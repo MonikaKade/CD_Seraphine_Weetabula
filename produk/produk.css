@@ -356,9 +356,10 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--dark-color);
-    color: var(--white);
+    background-color: #5D2906; /* Warna cokelat tua */
+    color: #fff8e1; /* Warna kuning pucat untuk teks */
     padding-top: 5rem;
+    position: relative;
 }
 
 .footer-content {
@@ -367,11 +368,13 @@ body {
     justify-content: space-between;
     padding: 0 10% 3rem;
     gap: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left {
     flex: 1;
-    min-width: 250px;
+    min-width: 300px;
 }
 
 .footer-logo {
@@ -384,111 +387,117 @@ body {
 .footer-logo .logo {
     width: 50px;
     height: 50px;
-    border: 2px solid var(--gold);
+    border: 2px solid #fff8e1;
 }
 
 .footer-logo .site-name {
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--primary-color);
+    font-size: 1.3rem;
+    color: #fff8e1;
 }
 
+.footer-left p {
+    margin-bottom: 1.5rem;
+    opacity: 1;
+    line-height: 1.7;
+    color: #fff8e1;
+}
 
 .social-media {
     display: flex;
-    gap: 1.2rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .social-media a {
-    color: var(--white);
+    color: #fff8e1;
     font-size: 1.2rem;
-    background-color: rgba(255,255,255,0.1);
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .social-media a:hover {
-    background-color: var(--gold);
-    color: var(--dark-color);
+    background-color: #fff8e1; /* Warna emas */
+    color: #5D2906;
+    transform: translateY(-5px);
 }
 
-.footer h3 {
-    color: var(--gold);
+.footer-center {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-center h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff8e1; /* Warna kuning emas */
     font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
 }
 
-.footer-center p, .footer-right .payment-methods {
+.footer-center p {
     margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: #fff8e1;
+    opacity: 1;
 }
 
-.payment-methods .payment-method {
+.footer-center i {
+    color: #fff8e1;
+    margin-top: 3px;
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-right h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff8e1;
+    font-family: 'Playfair Display', serif;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-method {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    background-color: rgba(255,255,255,0.05);
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
-    transition: var(--transition);
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #fff8e1;
 }
 
 .payment-method:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     transform: translateX(5px);
+}
+
+.payment-method i {
+    font-size: 1.5rem;
+    color: #fff8e1;
 }
 
 .footer-bottom {
     text-align: center;
-    background-color: rgba(0,0,0,0.2);
-    padding: 1.2rem;
+    padding: 1.5rem;
+    background-color: #4b1f03; /* Lebih gelap dari atasnya */
+    margin-top: 3rem;
     font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 999;
-    border: 2px solid var(--gold);
-}
-
-.back-to-top:hover {
-    background-color: var(--gold);
-    color: var(--dark-color);
-    transform: translateY(-5px);
-}
-
-@media (max-width: 768px) {
-    .navbar-links {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: block;
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        cursor: pointer;
-    }
-
-    .products-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+    opacity: 0.9;
+    color: #fff8e1;
 }

@@ -91,14 +91,16 @@ body {
   padding: 0.5rem 0;
   transition: all 0.3s ease;
 }
-
-.navbar-links a.active,
-.navbar-links a:hover {
-  color: var(--primary-color);
-  font-weight: 600;
+.navbar-links .nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: var(--transition);
 }
 
-.navbar-links a::after {
+.navbar-links .nav-link::after {
   content: '';
   position: absolute;
   left: 0;
@@ -106,13 +108,35 @@ body {
   width: 0;
   height: 2px;
   background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.navbar-links .nav-link.active,
+.navbar-links .nav-link:hover {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.navbar-links .nav-link.active::after,
+.navbar-links .nav-link:hover::after {
+  width: 100%;
+}
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
 }
 
 .navbar-links a:hover::after,
 .navbar-links a.active::after {
-  width: 100%;
+    width: 100%;
 }
+
 
 .mobile-menu {
   display: none;
@@ -616,12 +640,11 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--dark-color);
-    color: var(--white);
+    background-color: #5D2906; /* Warna cokelat tua */
+    color: #fff8e1; /* Warna kuning pucat untuk teks */
     padding-top: 5rem;
     position: relative;
 }
-
 
 .footer-content {
     display: flex;
@@ -648,18 +671,19 @@ body {
 .footer-logo .logo {
     width: 50px;
     height: 50px;
-    border: 2px solid var(--gold);
+    border: 2px solid #fff8e1;
 }
 
 .footer-logo .site-name {
     font-size: 1.3rem;
-    color: var(--white);
+    color: #fff8e1;
 }
 
 .footer-left p {
     margin-bottom: 1.5rem;
-    opacity: 0.8;
+    opacity: 1;
     line-height: 1.7;
+    color: #fff8e1;
 }
 
 .social-media {
@@ -669,7 +693,7 @@ body {
 }
 
 .social-media a {
-    color: var(--white);
+    color: #fff8e1;
     font-size: 1.2rem;
     width: 40px;
     height: 40px;
@@ -678,12 +702,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .social-media a:hover {
-    background-color: var(--gold);
-    color: var(--dark-color);
+    background-color: #fff8e1; /* Warna emas */
+    color: #5D2906;
     transform: translateY(-5px);
 }
 
@@ -695,7 +719,7 @@ body {
 .footer-center h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: var(--gold);
+    color: #fff8e1; /* Warna kuning emas */
     font-family: 'Playfair Display', serif;
 }
 
@@ -704,11 +728,12 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    opacity: 0.9;
+    color: #fff8e1;
+    opacity: 1;
 }
 
 .footer-center i {
-    color: var(--gold);
+    color: #fff8e1;
     margin-top: 3px;
 }
 
@@ -720,7 +745,7 @@ body {
 .footer-right h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: var(--gold);
+    color: #fff8e1;
     font-family: 'Playfair Display', serif;
 }
 
@@ -737,7 +762,8 @@ body {
     padding: 0.8rem 1rem;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    color: #fff8e1;
 }
 
 .payment-method:hover {
@@ -747,132 +773,15 @@ body {
 
 .payment-method i {
     font-size: 1.5rem;
-    color: var(--gold);
+    color: #fff8e1;
 }
 
 .footer-bottom {
     text-align: center;
     padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #4b1f03; /* Lebih gelap dari atasnya */
     margin-top: 3rem;
     font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    z-index: 999;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--gold);
-}
-
-.back-to-top.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    background-color: var(--gold);
-    color: var(--dark-color);
-    transform: translateY(-5px) scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-    
-    .hero h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 2rem;
-        gap: 2rem;
-        transition: var(--transition);
-        z-index: 999;
-    }
-    
-    .navbar-links.active {
-        left: 0;
-    }
-    
-    .navbar-links a {
-        font-size: 1.2rem;
-        margin-left: 0;
-    }
-    
-    .mobile-menu {
-        display: block;
-    }
-    
-    .hero {
-        margin-top: 80px;
-    }
-    
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-    
-    .hero-button {
-        padding: 0.7rem 1.5rem;
-    }
-    
-    .intro, .section, .produk-unggulan {
-        padding: 4rem 5%;
-    }
-    
-    .card, .produk-item {
-        min-width: 100%;
-    }
+    opacity: 0.9;
+    color: #fff8e1;
 }

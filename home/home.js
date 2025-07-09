@@ -8,14 +8,21 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // Combined scroll effects
-window.addEventListener('scroll', function() {
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+// Auto set active link based on current URL
+window.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.navbar-links a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+
     
     // Back to top button
     const backToTop = document.querySelector('.back-to-top');
@@ -35,7 +42,7 @@ window.addEventListener('scroll', function() {
             element.classList.add('animate_animated', 'animate_fadeInUp');
         }
     });
-});
+
 
 // Smooth scrolling for all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -85,3 +92,8 @@ document.querySelectorAll('.produk-button').forEach(button => {
 document.querySelector('.lihat-semua').addEventListener('click', function() {
     window.location.href = "../produk/produk.html";
 });
+function setActive(clickedLink) {
+    const links = document.querySelectorAll('.navbar-links .nav-link');
+    links.forEach(link => link.classList.remove('active'));
+    clickedLink.classList.add('active');
+}

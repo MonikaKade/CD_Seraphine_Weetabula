@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --primary-color: #8B4513;
+  --text-color: #333;
+  --transition: all 0.3s ease;
+  --dark-color: #1a1a1a;
+  --white: #ffffff;
+  --gold: #D2B48C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+  color: var(--text-color);
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.site-name {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 5px 0;
+  transition: var(--transition);
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+/* ===================== KONTAK ===================== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+header p {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.contact-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.left-box, .right-box {
+  flex: 1 1 45%;
+  padding: 20px;
+}
+
+.left-box h2, .right-box h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.contact-info li {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+.contact-info i {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #fff;
+  background: var(--primary-color);
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #3e1c04;
+}
+
+.right-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-box input,
+.right-box textarea {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #D2B48C;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.right-box textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.right-box button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.right-box button:hover {
+  background-color: #8B4513;
+}
+
+.map {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px; /* bisa disesuaikan */
+  border: none;
+  border-radius: 8px; /* opsional untuk sudut membulat */
+}
+
+
+/* ===================== FOOTER ===================== */
+/* Footer */
+.footer {
+    background-color: #5D2906; /* Warna cokelat tua */
+    color: #fff8e1; /* Warna kuning pucat untuk teks */
+    padding-top: 5rem;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10% 3rem;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo .logo {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff8e1;
+}
+
+.footer-logo .site-name {
+    font-size: 1.3rem;
+    color: #fff8e1;
+}
+
+.footer-left p {
+    margin-bottom: 1.5rem;
+    opacity: 1;
+    line-height: 1.7;
+    color: #fff8e1;
+}
+
+.social-media {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-media a {
+    color: #fff8e1;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    background-color: #fff8e1; /* Warna emas */
+    color: #5D2906;
+    transform: translateY(-5px);
+}
+
+.footer-center {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-center h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff8e1; /* Warna kuning emas */
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-center p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: #fff8e1;
+    opacity: 1;
+}
+
+.footer-center i {
+    color: #fff8e1;
+    margin-top: 3px;
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-right h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff8e1;
+    font-family: 'Playfair Display', serif;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #fff8e1;
+}
+
+.payment-method:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.payment-method i {
+    font-size: 1.5rem;
+    color: #fff8e1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #4b1f03; /* Lebih gelap dari atasnya */
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    color: #fff8e1;
+}
