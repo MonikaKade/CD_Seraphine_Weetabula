@@ -10,6 +10,11 @@ include '../backend/koneksi.php';
 // Ambil data produk dari database
 $query = "SELECT * FROM produk";
 $result = mysqli_query($koneksi, $query);
+
+$rows = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $rows[] = $row;
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +85,7 @@ $result = mysqli_query($koneksi, $query);
 
         .aksi-btn {
             display: inline-block;
-            margin: 0 5px;
+            margin: 5px 5px 0 0;
             padding: 0.4rem 0.8rem;
             border-radius: 6px;
             font-size: 0.9rem;
@@ -142,41 +147,43 @@ $result = mysqli_query($koneksi, $query);
         <div class="dashboard-header">
             <h2>Halo, <?= htmlspecialchars($_SESSION['username']); ?>!</h2>
             <div class="actions">
-                <a href="tambah_produk.php">+ Tambah Produk</a>
+                <a href="tambahproduk.php">+ Tambah Produk</a>
                 <a href="logout.php">Logout</a>
             </div>
         </div>
-
-        <h3 style="color: var(--dark-color); margin-bottom: 1rem;">Daftar Produk</h3>
         <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Produk</th>
-                    <th>Kategori</th>
-                    <th>Harga</th>
-                    <th>Gambar</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1; while ($row = mysqli_fetch_assoc($result)): ?>
-                <tr>
-                    <td data-label="No"><?= $no++; ?></td>
-                    <td data-label="Nama Produk"><?= htmlspecialchars($row['nama_produk']); ?></td>
-                    <td data-label="Kategori"><?= htmlspecialchars($row['kategori']); ?></td>
-                    <td data-label="Harga">Rp<?= number_format($row['harga'], 0, ',', '.'); ?></td>
-                    <td data-label="Gambar">
-                        <img src="../aset/image/<?= htmlspecialchars($row['gambar']); ?>" alt="<?= htmlspecialchars($row['nama_produk']); ?>">
-                <td data-label="Aksi">
-                    <a href="edit_produk.php?id=<?php echo $row['id_produk']; ?>" class="aksi-btn btn-edit">Edit</a>
-                    <a href="hapus_produk.php?id=<?php echo $row['id_produk']; ?>" class="aksi-btn btn-hapus" onclick="return confirm('Yakin ingin menghapus produk ini?');">Hapus</a>
-                </td>
+            <tr>
+                <th>No</th>
+                <th>Nama Produk</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th>Gambar</th>
+                <th>Aksi</th>
+            </tr>
 
-                </tr>
-                <?php endwhile; ?>
-            </tbody>
+            <?php $i = 1; foreach ($rows as $produk): ?>
+               <tr>
+                <td><?= $i++; ?></td>
+                <td><?= htmlspecialchars($produk['nama_produk']); ?></td>
+                <td><?= htmlspecialchars($produk['kategori']); ?></td>
+                <td>Rp<?= number_format($produk['harga'], 0, ',', '.'); ?></td>
+                <td>
+                    <img src="../aset/image/<?= htmlspecialchars($produk['gambar']); ?>" alt="Foto Produk" width="80">
+                </td>
+                <td>
+                    <a href="hapus_produk.php?id=<?= htmlspecialchars($produk['id']); ?>"
+                    class="aksi-btn btn-hapus"
+                    onclick="return confirm('Yakin ingin menghapus produk ini?');">
+                    Hapus
+                    </a>
+                    <a href="edit_produk.php?id=<?= htmlspecialchars($produk['id']); ?>"
+                    class="aksi-btn btn-edit">
+                    Edit
+                    </a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
         </table>
-    </div>
+     </div>  
 </body>
 </html>

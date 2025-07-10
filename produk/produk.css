@@ -266,6 +266,35 @@ body {
 }
 
 /* Produk */
+.product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+  .pesan-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 0.5rem 1rem;
+      background-color: #25d366;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+.btn-pesan:hover {
+      background-color: #1ebe5d;
+    }
+.pesan-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    .category.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
 .products-section {
     padding: 4rem 2rem;
 }
@@ -293,11 +322,11 @@ body {
 }
 
 .product-card img {
-    width: 100%;
-    height: auto;
+      width: 100%;
+    height: 250px;
     object-fit: cover;
+    border-bottom: 1px solid #eee;
 }
-
 .product-info {
     padding: 1rem;
     text-align: center;
