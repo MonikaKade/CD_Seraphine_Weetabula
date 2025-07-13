@@ -59,7 +59,7 @@ $produk = mysqli_query($koneksi, "SELECT * FROM produk");
   <div class="products-grid">
     <?php while($row = mysqli_fetch_assoc($produk)) : ?>
       <div class="product-card" data-kategori="<?= strtolower($row['kategori']); ?>">
-        <img src="../aset/image/produk/<?= htmlspecialchars($row['gambar']); ?>" alt="<?= htmlspecialchars($row['nama_produk']); ?>">
+        <img src="../aset/image/<?= htmlspecialchars($row['gambar']); ?>" alt="<?= htmlspecialchars($row['nama_produk']); ?>">
         <div class="product-info">
           <h3><?= htmlspecialchars($row['nama_produk']); ?></h3>
           <p class="price">
@@ -98,7 +98,7 @@ $produk = mysqli_query($koneksi, "SELECT * FROM produk");
       <h3>Kontak Kami</h3>
       <p><i class="fas fa-map-marker-alt"></i> Jln. Bulgur, No. 12, Langgalero, Tambolaka, SBD, NTT</p>
       <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
-      <p><i class="fas fa-envelope"></i> info@seraphineweetebula.com</p>
+      <p><i class="fas fa-envelope"></i> balaitenunseraphine@gmail.com</p>
     </div>
   </div>
   <div class="footer-bottom">

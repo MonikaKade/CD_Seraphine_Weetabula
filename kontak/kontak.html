@@ -4,9 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kontak - CD Seraphine Weetebula</title>
+
+  <!-- Font dan Ikon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="kontak.css" />
+
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      // Inisialisasi EmailJS dengan PUBLIC KEY kamu
+      emailjs.init("U9635DuWEjQnQpfs3");
+    })();
+  </script>
 </head>
 <body>
 
@@ -17,9 +28,9 @@
       <span class="site-name">CD Seraphine Weetebula</span>
     </div>
     <nav class="navbar-links">
-      <a href="../home/home.html" >Home</a>
-      <a href="../produk/produk.html">Produk</a>
-      <a href="../kontak/kontak.html" class="active">Kontak</a>
+      <a href="../home/home.html">Home</a>
+      <a href="../produk/produk.php">Produk</a>
+      <a href="kontak.html" class="active">Kontak</a>
     </nav>
   </header>
 
@@ -35,28 +46,30 @@
       <div class="left-box">
         <h2>Get In Touch</h2>
         <ul class="contact-info">
-          <li><i class="fas fa-map-marker-alt"></i>Jln. Bulgur, No. 12, Langgalero, Tambolaka, NTT</li>
+          <li><i class="fas fa-map-marker-alt"></i> Jln. Bulgur, No. 12, Langgalero, Tambolaka, NTT</li>
           <li><i class="fas fa-phone"></i> +62 895-4217-7009</li>
-          <li><i class="fas fa-envelope"></i>seraphineweetebula@gmail.com</li>
+          <li><i class="fas fa-envelope"></i> balaitenunseraphine@gmail.com</li>
         </ul>
         <div class="social-icons">
-          <a href="BalaiTenunSeraphine"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/balaitenunseraphine/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
-
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/balaitenunseraphine/"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
+      <!-- Form Kontak -->
       <div class="right-box">
-       <form id="waForm">
-  <h2>Send a Message</h2>
-  <input type="text" id="name" name="name" placeholder="Name" required>
-  <input type="email" id="email" name="email" placeholder="E-mail address" required>
-  <textarea id="message" name="message" placeholder="Message" required></textarea>
-  <button type="submit">Submit</button>
-</form>
+        <form id="contact-form">
+          <h2>Send a Message</h2>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="E-mail address" required />
+          <input type="text" name="title" placeholder="Subject" required />
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
 
+    <!-- Google Maps -->
     <div class="map">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.764266339008!2d119.22604927407978!3d-9.44205979888495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c4acf9d015e9209%3A0x84e497d78e33db0d!2sYayasan%20Inna%20Seraphine%20Sumba!5e0!3m2!1sen!2sid!4v1751863541753!5m2!1sen!2sid" 
@@ -76,53 +89,43 @@
         <p>Melestarikan warisan tenun Sumba sambil memberdayakan masyarakat lokal melalui karya berkualitas tinggi.</p>
         <div class="social-media">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/balaitenunseraphine/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/balaitenunseraphine/"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-
       <div class="footer-center">
-                <h3>Kontak Kami</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Jln. Bulgur, No. 12, Langgalero, Tambolaka, SBD, NTT</p>
-                <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
-                <p><i class="fas fa-envelope"></i> seraphineweetebula@gmail.com</p>
-            </div>
-            
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CD Seraphine Weetebula. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+        <h3>Kontak Kami</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Jln. Bulgur, No. 12, Langgalero, Tambolaka, SBD, NTT</p>
+        <p><i class="fas fa-phone"></i> +62 895-4217-7009</p>
+        <p><i class="fas fa-envelope"></i> balaitenunseraphine@gmail.com</p>
+      </div>
     </div>
-    <script src="home.js"></script>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CD Seraphine Weetebula. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-<script>
-  document.getElementById("waForm").addEventListener("submit", function(event){
-    event.preventDefault(); // Mencegah halaman reload
+  <!-- Back to Top -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
+  <!-- EmailJS Script -->
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Cegah reload halaman
 
-    // Format pesan WhatsApp
-    var fullMessage = `Halo, saya ${name} (${email}). Saya ingin menyampaikan pesan:\n\n${message}`;
+      emailjs.sendForm('service_d8bqb7u', 'template_usa52vl', this)
+        .then(function(response) {
+          alert("Pesan berhasil dikirim ke email!");
+          console.log("SUCCESS!", response.status, response.text);
+          document.getElementById("contact-form").reset(); // Kosongkan form setelah terkirim
+        }, function(error) {
+          alert("Gagal mengirim email. Silakan coba lagi.");
+          console.error("FAILED...", error);
+        });
+    });
+  </script>
 
-    // Nomor WhatsApp tujuan (ganti dengan nomor asli Anda)
-    var phoneNumber = "6289542177009"; // Tanpa "+" dan awali dengan 62
-
-    // Buat URL untuk WhatsApp
-    var waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
-
-    // Buka WhatsApp
-    window.open(waUrl, "_blank");
-  });
-</script>
-
-    
 </body>
 </html>
