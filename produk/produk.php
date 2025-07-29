@@ -87,8 +87,8 @@ $produk = mysqli_query($koneksi, "SELECT * FROM produk");
       </div>
       <p>Melestarikan warisan tenun Sumba sambil memberdayakan masyarakat lokal melalui karya berkualitas tinggi.</p>
       <div class="social-media">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61578673720495"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/balaitenunseraphine?igsh=aHBta2dtZ3diZTZt"><i class="fab fa-instagram"></i></a>
         <a href="https://wa.me/6289542177009?text=Halo%20admin%2C%20saya%20ingin%20bertanya%20seputar%20produk" target="_blank">
           <i class="fab fa-whatsapp"></i>
         </a>
