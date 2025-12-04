@@ -5,9 +5,6 @@ $pass = "";
 $db   = "cd_seraphine";
 $port = "3306";
 
-// Membuat koneksi
-$koneksi = mysqli_connect($host, $user, $pass, $db);
-
 // Cek koneksi
 if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());
