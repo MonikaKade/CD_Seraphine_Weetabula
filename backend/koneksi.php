@@ -3,6 +3,7 @@ $host = "localhost";
 $user = "root";
 $pass = "";
 $db   = "cd_seraphine";
+$port = "3306";
 
 // Membuat koneksi
 $koneksi = mysqli_connect($host, $user, $pass, $db);

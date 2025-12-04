@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2025 at 02:38 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Waktu pembuatan: 04 Des 2025 pada 02.35
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,77 +24,80 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$85.SPfIDaDlS3X3U8eVjEOAo.FFhQvRAiKywVZEPSSwv9CWCYPjea');
+INSERT INTO `admin` (`id`, `nama`, `username`, `password`) VALUES
+(1, 'Admin Utama', 'admin', '$2y$10$P3kwARNvhfccA59HIfizkekdM4vuzPzd9KO3RQE9g9pkU7N6lkNuC');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
   `id` int(11) NOT NULL,
-  `nama_produk` varchar(100) NOT NULL,
+  `nama_produk` varchar(255) DEFAULT NULL,
+  `kategori` varchar(100) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL,
-  `kategori` enum('tenun','tas','selendang','aksesoris') NOT NULL,
+  `harga_awal` int(11) DEFAULT NULL,
   `gambar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id`, `nama_produk`, `harga`, `kategori`, `gambar`) VALUES
-(1, 'Tas Tenun Purple', 80000, 'tas', '12.jpeg'),
-(4, 'Tas Punggung', 150000, 'tas', '11.jpeg'),
-(5, 'Kain Tenun ', 110000, 'tenun', 'tenun5.jpeg'),
-(6, 'Tas Tenun Blue', 185000, 'tas', '9.jpeg');
+INSERT INTO `produk` (`id`, `nama_produk`, `kategori`, `harga`, `harga_awal`, `gambar`) VALUES
+(1, 'Tas', 'Tas', 250000, NULL, '6.jpeg'),
+(2, 'Tas Punggung', 'Tas', 125000, NULL, '11.jpeg'),
+(3, 'Kain Tenun ', 'Tenun', 999998, NULL, 'tenun6.jpeg'),
+(4, 'Selendang', 'Selendang', 100000, NULL, 'tenun2.jpeg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
