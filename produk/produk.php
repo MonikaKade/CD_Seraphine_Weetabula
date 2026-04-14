@@ -67,7 +67,7 @@ $produk = mysqli_query($koneksi, "SELECT * FROM produk");
 
   <!-- UBAHAN MULAI: Search bar dan request button -->
   <div class="search-row" style="margin-top:16px;">
-    <input type="search" id="searchInput" class="search-input" placeholder="Cari produk... ketik nama produk">
+    <input type="search" id="searchInput" class="search-input" placeholder="Cari produk... ketikan nama produk">
     <button id="openRequestBtn" class="btn-request" type="button"><i class="fas fa-plus"></i> Request Produk</button>
   </div>
 

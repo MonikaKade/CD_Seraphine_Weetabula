@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+$host = "Localhost";
 $user = "root";
 $pass = "";
 $db   = "cd_seraphine";
